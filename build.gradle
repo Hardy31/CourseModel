@@ -1,0 +1,92 @@
+//plugins {
+//
+//    //  добавляем Spring Boot
+//    id 'org.springframework.boot' version '2.7.18'
+//    id 'io.spring.dependency-management' version '1.1.4'
+//    //добавляем lombok
+//    id("io.freefair.lombok") version "8.6"
+//    id 'java'
+//}
+//
+//group = 'org.example'
+//version = '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//
+//    implementation 'org.springframework.boot:spring-boot-starter'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'org.postgresql:postgresql'
+//    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//
+//
+//
+////    implementation 'org.springframework.boot:spring-boot-starter-web'
+////    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+////    implementation 'org.postgresql:postgresql'
+////
+////    testImplementation platform('org.junit:junit-bom:5.10.0')
+////    testImplementation 'org.junit.jupiter:junit-jupiter'
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.6.2'
+    id "io.spring.dependency-management" version '1.0.11.RELEASE'
+    id "io.freefair.lombok" version "6.3.0"
+
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'org.postgresql:postgresql'
+    // https://mvnrepository.com/artifact/org.postgresql/postgresql
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.3'
+
+//    Для формирования отчета в в формате xlsx
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.2.5'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.5'
+
+
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// ERROR - 'void org.gradle.api.internal.artifacts.dsl.LazyPublishArtifact.<init>(org.gradle.api.provider.Provider)'
+//wrapper {
+//    gradleVersion '7.4.0'
+//}
+
+ // ТОже ERROR 'void org.gradle.api.internal.artifacts.dsl.LazyPublishArtifact.<init>(org.gradle.api.provider.Provider)'
+//wrapper {
+//    gradleVersion '7.6.4'
+//}
+
+wrapper {
+    gradleVersion '8.0'
+}

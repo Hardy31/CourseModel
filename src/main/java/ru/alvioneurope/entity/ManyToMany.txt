@@ -1,0 +1,3 @@
+https://www.baeldung.com/jpa-many-to-many
+
+https://medium.com/@arijit83work/manytomany-relationship-in-spring-boot-with-hibernate-and-jpa-35d7b4fdf3bf
